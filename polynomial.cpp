@@ -33,17 +33,14 @@ polynomial<S> polynomial<S>:: operator * (S num){
     polynomial<S> result(sol);
     return result;
 }
-int main(){
-    /*std :: vector<int>p1 = {1,1,1,1,7};
-    std :: vector<int>p2 = {0,1,3,1,2,4};
-    polynomial<int> mp1(p1);
-    polynomial<int>mp2(p2);
-    std :: cout << '(' << mp1 << " ) * (" << mp2 << " = ("<< mp1 * mp2 << ") \n";
-    */
-    std :: vector<double>num = {1.2,3.6,4.5, 8.9,9.1};
-    polynomial<double>nums(num);
-    auto nums2 = nums * nums;
-    auto twonums2 = nums2 + nums2;
-    std::cout << twonums2;
+template<class S>
+S polynomial<S>:: evaluate(S x){
+    S ans = 0;
+    S v = 1;
+    for(int i = 0; i < (int)this -> coeffecients.size(); ++i){
+        ans += v * coeffecients[i];
+        v *= x;
+    }
+    return ans;
 }
 
