@@ -6,6 +6,14 @@
 template<class S>struct polynomial{
     std::vector<S>coeffecients;
     polynomial(std::vector<S> arr):coeffecients(arr){};
+    polynomial(){
+        coeffecients = {0};
+    }
+    void sanitize(){
+        while((int)coeffecients.size() > 1 && coeffecients.back() < 1e-100){
+            coeffecients.pop_back();
+        }
+    }
     void operator = (polynomial<S> rhs){
         coeffecients = rhs.coeffecients;
     }
@@ -21,6 +29,7 @@ template<class S>struct polynomial{
         return os;
     }
     S evaluate(S x);
+    polynomial<S> differentiate();
 };
 #endif
 /*
