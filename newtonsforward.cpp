@@ -148,5 +148,8 @@ int main(){
 }
 
 //    works for both forward and backward differences and now central differences...
+/*
+    for central differences you give the position of the point of interest for example in the above example you if you are interested in 0.3 you pass 3 as a parameter to central differences as shown above...  the polynomials are the same for central and forward and backward differences... Based on the examples done... For printing you might have to edit the code yourself
+*/
     
 
