@@ -7,4 +7,4 @@ int main(){
     auto a = mysol.gen_poly();
     std :: cerr << a.evaluate(15) << "\n";
     return 0;
-}
+}//Bill is not amazing.
